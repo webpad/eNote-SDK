@@ -56,7 +56,7 @@ Refresh Control Broadcast Receiver
 
 2-Step-Suspend
 
-adb Setup
+## adb Setup
 
 USB Driver Installation for Windows 7 
 
@@ -94,17 +94,17 @@ design, which contains two classes.jar and javalib.jar JAVA Library.
 - Android SDK 4.4 (API level 19).
 - Android Studio 2.1.3 above version.
 
-4
+
 Rev. 1.3
-Programing Guide for MobiScribe eNote
+## Programing Guide for MobiScribe eNote
 IMPLEMENTATION
 MobiScribe Library (SDK):
 There are 2 main libraries for E-ink Refresh and Handwriting , customer
 can include these libraries to make the performance better
-5
+
+
+## E-ink Refresh Library
 Rev. 1.3
-Programing Guide for MobiScribe eNote
-E-ink Refresh Library
 Import view class :
 import android.view.View ;
 Summary
