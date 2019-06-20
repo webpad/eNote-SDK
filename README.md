@@ -643,64 +643,15 @@ state
 24
 Rev. 1.3
 Programing Guide for MobiScribe eNote
-Features Example Use Cases
-WF
-mode
-Comments
-INTERACTIVE
-Menu Selection
-(response to user
-input)
-Black/White options: Radio
-buttons, underlining, Box
-outline, invert text etc.
-DU
-Grayscale option: Highlight
-selection in gray
-GC Box selection; Could be more flashy
-Keyboard/Text
-input
-Search box entry Password
-entry
-DU
-If anti-aliased text is desired, can play
-around with combined DU/GC update
-Keyboard response
-Button key
-acknowledgement
-DU
-Inversion of selected key Use inherent
-flashiness of GC to redisplay the
-button?
-Browsing books,
-apps, or menu
-options (graphical)
-Selection GC
-Recommend doing pipeline to show
-transitions
-Fast Page Turn
-Scanning through
-Books/Documents
-A2
-Reduced contrast - may be more
-ghosty; Need to start and end with
-White; GC should follow to display a
-quality image
-DU Not as fast as A2 Better image quality
-Panning
-Navigating zoomed in
-text/images
-Navigating maps Camera
-view finder
-A2 Achieve grayscale through dithering
-Highlighting Text highlighting
-DU
-GC
-DU+GC
-inversion of text with DU
-Grayscale highlighting with GC
-Combination of both: DU for fast initial
-user response, followed by GC to
-change to grayscale?
-25
+|             |                      Features                     | Example Use Cases                                                              | WF Mode       | Comments                                                                                                                                                   |
+|-------------|:-------------------------------------------------:|--------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Interactive | Menu Selection (Response to user input)           | Black/White Options: Radio buttons, underlining, Box outline, invert text etc. | DU            |                                                                                                                                                            |
+| Interactive | Menu Selection (Response to user input)           | Grayscale Option: Highlight selection in gray                                  | GC            | Box Selection; could be more flashy                                                                                                                        |
+| Interactive | Keyboard/Text Input                               | Search box entry password entry                                                | DU            | if anti-aliased text is desired, can play around with combined DU/GC update                                                                                |
+| Interactive | Keyboard response                                 | Button Key acknowledgement                                                     | DU            | Inversion of selected key Use inherent flashiness of GC to redisplay the button                                                                            |
+| Interactive | Browsing books, apps, or menu options (graphical) | Selection                                                                      | GC            | Recommend doing pipeline to show transitions                                                                                                               |
+| Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | A2            | Reduced Contrast - may be more ghostly; Need to start and end with white; GC should follow to display a quality image                                      |
+| Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | DU            | Not as fast as A2 Better image quality                                                                                                                     |
+| Interactive | Panning                                           | Navigating zoomed text/images Navigating maps Camera view finder               | A2            | Achieve grayscale through dithering                                                                                                                        |
+| Interactive | Highlighting                                      | Text highlighting                                                              | DU  GC  DU+GC | inversion of text with DU  Grayscale highlighting with GC  Combination of both: DU for fast initial user response , followed by GC to change to grayscale? |
 Rev. 1.3
