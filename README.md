@@ -1,13 +1,13 @@
 # eNote-SDK
 
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Programing Guide
-for Netronix eNote
+for MobiScribe eNote
 Version 2.0
 2019/03/26
 1
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Revision Description Author Date
 V1.0 Initial Jacky Tseng 2018/1/23
 V1.1 adb Setup Jacky Tseng 2018/2/26
@@ -24,7 +24,7 @@ V1.9 Add NDrawSetPenType Eason Chen 2019/01/23
 V2.0 Add eink control permission Eason Chen 2019/03/26
 2
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Outline
 INTRODUCTION 4
 Development REQUIREMENTS 4
@@ -32,7 +32,7 @@ Operate System: 4
 Java Environment: 4
 Android Environment: 4
 IMPLEMENTATION 5
-Netronix Library (SDK): 5
+MobiScribe Library (SDK): 5
 E-ink Refresh Library 6
 Example Code for Full Refresh Display 6
 Handwriting Library 9
@@ -61,10 +61,10 @@ Standard(4 bits) Waveform Modes 22
 Regal (5 bits) Waveform Modes 23
 3
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 UI Design with waveform mode 23
 INTRODUCTION
-This document is provided by Netronix SDK Library, the purpose of
+This document is provided by MobiScribe SDK Library, the purpose of
 providing software design guide. The SDK Library uses the JAVA language
 design, which contains two classes.jar and javalib.jar JAVA Library.
 Development REQUIREMENTS
@@ -80,14 +80,14 @@ Android Environment:
 ◆ Android Studio 2.1.3 above version.
 4
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 IMPLEMENTATION
-Netronix Library (SDK):
+MobiScribe Library (SDK):
 There are 2 main libraries for E-ink Refresh and Handwriting , customer
 can include these libraries to make the performance better
 5
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 E-ink Refresh Library
 Import view class :
 import android.view.View ;
@@ -111,7 +111,7 @@ View. EINK_WAVEFORM_MODE_DU
 | View. EINK_UPDATE_MODE_PARTIAL ;
 6
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 EINK Mode (2/3)
 public static final int UPDATE_MODE_PARTIAL_A2 =
 View. EINK_WAVEFORM_MODE_A2
@@ -138,7 +138,7 @@ View. EINK_WAVEFORM_MODE_DU
 | View. EINK_MONOCHROME_MODE_MONOCHROME ;
 7
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 EINK Mode (3/3)
 public static final int UPDATE_MODE_PARTIAL_A2_WITH_MONO =
 View. EINK_WAVEFORM_MODE_A2
@@ -167,7 +167,7 @@ View. EINK_WAVEFORM_MODE_DU
 public static final int MODE_APPNDRAWSTROKESYNC = 0x01000000;
 8
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Handwriting Library
 Import nDrawHelper class :
 import ntx.draw.nDrawHelper;
@@ -203,7 +203,7 @@ void NDrawDropFrames(long nanosecond )
 long nanosecond : set time of don't update screen
 9
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Initializing nDraw:
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -215,7 +215,7 @@ void NDrawInit();
 no parameter; initialize nDraw
 10
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Setting Draw Region
 int Ndraw_region_left = 0 ;
 int Ndraw_region_top = getRelativeTop(NtxView. this );
@@ -236,7 +236,7 @@ NDrawSetDrawRegion(int[] packet);
 int [] packet { left, top, right, bottom} : set draw region
 11
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Setting Multi Draw Region
 int Ndraw_region_left = 0 ;
 int Ndraw_region_top = getRelativeTop(NtxView. this );
@@ -270,7 +270,7 @@ int [] packet { left1, top1, right1, bottom1, left2, top2, right2, bottom2, left
 top3, right3, bottom3} : set multi draw region
 12
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for switch Hand Writing mode and pen offset :
 // Set nDraw enable
 nDrawHelper.NDrawSwitch( true );
@@ -303,7 +303,7 @@ int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
 respectively
 13
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Setting nDraw Paint Stroke Width:
 nDraw and paint strokeWidth of the Canvas must be the same.
 nDrawHelper.NDrawSetStrokeWidth(( int ) lineWidth );
@@ -328,7 +328,7 @@ void NDrawSetPaintColor( int color )
 int color : set nDraw paint color
 14
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Changing Update Mode of Writing
 public static boolean isPenUpdateModeDU() {
 return SystemProperties.get( "ro.product.hardwareType" , "" ).equals( "ED0Q00" );
@@ -352,7 +352,7 @@ void NDrawSetUpdateMode(int refresh_mode)
 int refresh_mode: set update mode of writing
 15
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Example Code for Setting Orientation of Writing Area
 private NtxView myNewView ;
 myNewView .setCurrentRotation(getRequestedOrientation());
@@ -378,7 +378,7 @@ void NDrawDropFrames( long nanosecond )
 long nanosecond: set time duration of dropping frames.
 16
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Appendix
 Refresh Control Broadcast Receiver
 In order to improve EPD scrolling display performance, we have adopted some global eink
@@ -402,7 +402,7 @@ sendBroadcast(changePermissionIntent);
 }
 17
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Using Intent( "ntx.eink_control. GLOBAL_REFRESH " ), we can switch to and keep one
 refresh mode until we send broadcast to switch to another one. Example codes are as follows.
 Example Code for Changing Global Refresh Mode to
@@ -428,7 +428,7 @@ myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
 18
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Sometimes we want to drop animation frames to decrease eink flash, example codes are as
 follows.
 Example Code for Setting Time Duration of Dropping Frames
@@ -443,9 +443,9 @@ myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
 19
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 2-Step-Suspend
-This feature is a method for power saving on the Netronix products
+This feature is a method for power saving on the MobiScribe products
 with eInk panel. When this function is enabled, the system will keep
 the current screen and enter suspend after the user has not acted for
 a while. Please refer to the following sample code to control this
@@ -455,7 +455,7 @@ from the suspend and it will take a very short time. It’s suitable for
 reader apps to flip pages. There will be a delay in the first stroke if
 using this feature in the handwriting apps.
 /**
-* Control the 2-Step-Suspend for Netronix eInk devices
+* Control the 2-Step-Suspend for MobiScribe eInk devices
 *
 * @param state
 * 1 is enable.
@@ -472,7 +472,7 @@ NOTE : Add the permission “WRITE_SETTINGS” in the AndroidManifest.xml
 <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 20
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 adb Setup
 1. USB Driver Installation for Windows 7
 Download the driver from the Link , and install it.
@@ -537,7 +537,7 @@ display except pixels staying in white will update as the new image is
 written. The GL waveform has 16 unique gray levels.
 22
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Regal (5 bits) Waveform Modes
 Standard WF mode included
 Mode Description
@@ -557,7 +557,7 @@ and other images with white background. This should be used with full
 display update. All pixels except pixels staying white will update.
 23
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 UI Design with waveform mode
 Features Example Use Cases
 WF
@@ -657,7 +657,7 @@ Recommendation to go into a known
 state
 24
 Rev. 1.3
-Programing Guide for netronix eNote
+Programing Guide for MobiScribe eNote
 Features Example Use Cases
 WF
 mode
