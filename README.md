@@ -643,6 +643,7 @@ state
 24
 Rev. 1.3
 Programing Guide for MobiScribe eNote
+
 |             |                      Features                     | Example Use Cases                                                              | WF Mode       | Comments                                                                                                                                                   |
 |-------------|:-------------------------------------------------:|--------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Interactive | Menu Selection (Response to user input)           | Black/White Options: Radio buttons, underlining, Box outline, invert text etc. | DU            |                                                                                                                                                            |
@@ -654,4 +655,5 @@ Programing Guide for MobiScribe eNote
 | Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | DU            | Not as fast as A2 Better image quality                                                                                                                     |
 | Interactive | Panning                                           | Navigating zoomed text/images Navigating maps Camera view finder               | A2            | Achieve grayscale through dithering                                                                                                                        |
 | Interactive | Highlighting                                      | Text highlighting                                                              | DU  GC  DU+GC | inversion of text with DU  Grayscale highlighting with GC  Combination of both: DU for fast initial user response , followed by GC to change to grayscale? |
+
 Rev. 1.3
