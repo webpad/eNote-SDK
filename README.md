@@ -1,27 +1,11 @@
 # eNote-SDK
 
 Programing Guide for MobiScribe eNote
+
 Programing Guide
 for MobiScribe eNote
 Version 2.0
 2019/03/26
-1
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Revision Description Author Date
-V1.0 Initial Jacky Tseng 2018/1/23
-V1.1 adb Setup Jacky Tseng 2018/2/26
-V1.2 Eink Features/Waveforms Jacky Tseng 2018/3/27
-V1.3 2-Step-Suspend Daniel Chiang 2018/3/31
-V1.4 Refresh Control Broadcast Receiver Eason Chen 2018/8/03
-V1.5 nDraw uninit , the method of sync pen stroke Daniel Chiang 2018/8/23
-V1.6 Add NDrawSkia2FBSetDrawRegion Eason Chen 2018/10/03
-V1.7 Change nDrawHelper API Name and Add
-NDrawDropFrames API
-Dylan Kuo 2018/12/07
-V1.8 Add new feature - set multi draw region Eason Chen 2019/01/15
-V1.9 Add NDrawSetPenType Eason Chen 2019/01/23
-V2.0 Add eink control permission Eason Chen 2019/03/26
 2
 Rev. 1.3
 Programing Guide for MobiScribe eNote
