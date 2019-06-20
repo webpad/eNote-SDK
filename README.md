@@ -6,49 +6,72 @@ Version 2.0
 Rev. 1.3
 
 ## Table of Contents
-INTRODUCTION 4
+INTRODUCTION 
 
-Development REQUIREMENTS 4
+Development REQUIREMENTS 
 
-Operate System: 4
+Operate System
 
-Java Environment: 4
+Java Environment
 
-Android Environment: 4
+Android Environment
 
-IMPLEMENTATION 5
+IMPLEMENTATION 
 
-MobiScribe Library (SDK): 5
+MobiScribe Library (SDK)
 
-E-ink Refresh Library 6
+E-ink Refresh Library
 
-Example Code for Full Refresh Display 6
+Example Code for Full Refresh Display
 
-Handwriting Library 9
+Handwriting Library
 
-Example Code for Initializing nDraw 10
-Example Code for Setting Draw Region 11
-Example Code for Setting Multi Draw Region 12
-Example Code for switch Hand Writing mode and pen offset 1 3
-Example Code for Setting Pen Type 1 3
-Example Code for Setting nDraw Paint Stroke Width 1 4
-Example Code for Setting Pen Thickness with Pressure of Writing 14
-Example Code for Setting nDraw Paint Color 1 4
-Example Code for Changing Update Mode of Writing 15
-Example Code for Setting Orientation of Writing Area 16
-Example Code for Taking Screenshots of Writing Area and Entire Screen 16
-Example Code for Setting Time Duration of Dropping Frames 16
-Appendix 17
-Refresh Control Broadcast Receiver 17
-2-Step-Suspend 20
-adb Setup 21
-USB Driver Installation for Windows 7 21
-Download Android SDK platform-tools 21
-Add Android Vendor ID 21
-Execute adb server 21
-Eink Features/Waveforms 22
-Standard(4 bits) Waveform Modes 22
-Regal (5 bits) Waveform Modes 23
+Example Code for Initializing nDraw
+
+Example Code for Setting Draw Region
+
+Example Code for Setting Multi Draw Region 
+
+Example Code for switch Hand Writing mode and pen offset 
+
+Example Code for Setting Pen Type 
+
+Example Code for Setting nDraw Paint Stroke Width
+
+Example Code for Setting Pen Thickness with Pressure of Writing 
+
+Example Code for Setting nDraw Paint Color 
+
+Example Code for Changing Update Mode of Writing
+
+Example Code for Setting Orientation of Writing Area 
+
+Example Code for Taking Screenshots of Writing Area and Entire Screen
+
+Example Code for Setting Time Duration of Dropping Frames
+
+Appendix 
+
+Refresh Control Broadcast Receiver 
+
+2-Step-Suspend
+
+adb Setup
+
+USB Driver Installation for Windows 7 
+
+Download Android SDK platform-tools
+
+Add Android Vendor ID
+
+Execute adb server 
+
+Eink Features/Waveforms
+
+Standard(4 bits) Waveform Modes 
+
+Regal (5 bits) Waveform Modes 
+
 
 
 ## INTRODUCTION 
