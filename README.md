@@ -6,72 +6,49 @@ Version 2.0
 Rev. 1.3
 
 ## Table of Contents
-INTRODUCTION 
+INTRODUCTION 4
 
-Development REQUIREMENTS 
+Development REQUIREMENTS 4
 
-Operate System
+Operate System: 4
 
-Java Environment
+Java Environment: 4
 
-Android Environment
+Android Environment: 4
 
-IMPLEMENTATION 
+IMPLEMENTATION 5
 
-MobiScribe Library (SDK)
+MobiScribe Library (SDK): 5
 
-E-ink Refresh Library
+E-ink Refresh Library 6
 
-Example Code for Full Refresh Display
+Example Code for Full Refresh Display 6
 
-Handwriting Library
+Handwriting Library 9
 
-Example Code for Initializing nDraw
-
-Example Code for Setting Draw Region
-
-Example Code for Setting Multi Draw Region 
-
-Example Code for switch Hand Writing mode and pen offset 
-
-Example Code for Setting Pen Type 
-
-Example Code for Setting nDraw Paint Stroke Width
-
-Example Code for Setting Pen Thickness with Pressure of Writing 
-
-Example Code for Setting nDraw Paint Color 
-
-Example Code for Changing Update Mode of Writing
-
-Example Code for Setting Orientation of Writing Area 
-
-Example Code for Taking Screenshots of Writing Area and Entire Screen
-
-Example Code for Setting Time Duration of Dropping Frames
-
-Appendix 
-
-Refresh Control Broadcast Receiver 
-
-2-Step-Suspend
-
-## adb Setup
-
-USB Driver Installation for Windows 7 
-
-Download Android SDK platform-tools
-
-Add Android Vendor ID
-
-Execute adb server 
-
-Eink Features/Waveforms
-
-Standard(4 bits) Waveform Modes 
-
-Regal (5 bits) Waveform Modes 
-
+Example Code for Initializing nDraw 10
+Example Code for Setting Draw Region 11
+Example Code for Setting Multi Draw Region 12
+Example Code for switch Hand Writing mode and pen offset 1 3
+Example Code for Setting Pen Type 1 3
+Example Code for Setting nDraw Paint Stroke Width 1 4
+Example Code for Setting Pen Thickness with Pressure of Writing 14
+Example Code for Setting nDraw Paint Color 1 4
+Example Code for Changing Update Mode of Writing 15
+Example Code for Setting Orientation of Writing Area 16
+Example Code for Taking Screenshots of Writing Area and Entire Screen 16
+Example Code for Setting Time Duration of Dropping Frames 16
+Appendix 17
+Refresh Control Broadcast Receiver 17
+2-Step-Suspend 20
+adb Setup 21
+USB Driver Installation for Windows 7 21
+Download Android SDK platform-tools 21
+Add Android Vendor ID 21
+Execute adb server 21
+Eink Features/Waveforms 22
+Standard(4 bits) Waveform Modes 22
+Regal (5 bits) Waveform Modes 23
 
 
 ## INTRODUCTION 
@@ -94,131 +71,123 @@ design, which contains two classes.jar and javalib.jar JAVA Library.
 - Android SDK 4.4 (API level 19).
 - Android Studio 2.1.3 above version.
 
+# IMPLEMENTATION
 
-Rev. 1.3
-## Programing Guide for MobiScribe eNote
-IMPLEMENTATION
-MobiScribe Library (SDK):
 There are 2 main libraries for E-ink Refresh and Handwriting , customer
 can include these libraries to make the performance better
 
-
 ## E-ink Refresh Library
-Rev. 1.3
+
 Import view class :
+```
 import android.view.View ;
-Summary
-Return Parameter
-void
-invalidate( Rect region , int updateMode );
-Rect region : set invalidate area
-int updateMode : EINK update mode
-void invalidate( int updateMode );
-int updateMode : EINK update mode
-Example Code for Full Refresh Display:
+```
+# Summary
+
+|Return|Parameter|
+|------|-------------|
+|void  | invalidate( Rect region , int updateMode );<br> . Rect region : set invalidate area <br> . int updateMode : EINK update mode|
+|void|void invalidate( int updateMode );<br> . int updateMode : EINK update mode|
+
+
+
+
+
+
+# Example Code for Full Refresh Display:
+```
 invalidate( UPDATE_MODE_FULL_GC16 );
-EINK update mode (1/3)
+```
+
+**EINK update mode (1/3)**
+```
 import android.view.View ;
 public static final int UPDATE_MODE_FULL_GC16 =
-View. EINK_WAVEFORM_MODE_GC16
-| View. EINK_UPDATE_MODE_FULL ;
+  View. EINK_WAVEFORM_MODE_GC16
+  | View. EINK_UPDATE_MODE_FULL ;
 public static final int UPDATE_MODE_PARTIAL_DU =
-View. EINK_WAVEFORM_MODE_DU
-| View. EINK_UPDATE_MODE_PARTIAL ;
-6
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-EINK Mode (2/3)
+  View. EINK_WAVEFORM_MODE_DU
+  | View. EINK_UPDATE_MODE_PARTIAL ;
+```
+
+**EINK Mode (2/3)**
+```
 public static final int UPDATE_MODE_PARTIAL_A2 =
-View. EINK_WAVEFORM_MODE_A2
-| View. EINK_UPDATE_MODE_PARTIAL ;
+  View. EINK_WAVEFORM_MODE_A2
+  | View. EINK_UPDATE_MODE_PARTIAL ;
 public static final int UPDATE_MODE_PARTIAL_GC4 =
-View. EINK_WAVEFORM_MODE_GC4
-| View. EINK_UPDATE_MODE_PARTIAL ;
+  View. EINK_WAVEFORM_MODE_GC4
+  | View. EINK_UPDATE_MODE_PARTIAL ;
 public static final int UPDATE_MODE_PARTIAL_DU_WITH_DITHER =
-View. EINK_WAVEFORM_MODE_DU
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER ;
+  View. EINK_WAVEFORM_MODE_DU
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER ;
 public static final int UPDATE_MODE_PARTIAL_A2_WITH_DITHER =
-View. EINK_WAVEFORM_MODE_A2
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER ;
+  View. EINK_WAVEFORM_MODE_A2
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER ;
 public static final int UPDATE_MODE_PARTIAL_GC4_WITH_DITHER =
-View. EINK_WAVEFORM_MODE_GC4
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER ;
+  View. EINK_WAVEFORM_MODE_GC4
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER ;
 public static final int UPDATE_MODE_PARTIAL_DU_WITH_MONO =
-View. EINK_WAVEFORM_MODE_DU
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER
-| View. EINK_MONOCHROME_MODE_MONOCHROME ;
-7
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-EINK Mode (3/3)
+  View. EINK_WAVEFORM_MODE_DU
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER
+  | View. EINK_MONOCHROME_MODE_MONOCHROME ;
+```
+
+**EINK Mode (3/3)**
+```
 public static final int UPDATE_MODE_PARTIAL_A2_WITH_MONO =
-View. EINK_WAVEFORM_MODE_A2
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER
-| View. EINK_MONOCHROME_MODE_MONOCHROME ;
+  View. EINK_WAVEFORM_MODE_A2
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER
+  | View. EINK_MONOCHROME_MODE_MONOCHROME ;
 public static final int UPDATE_MODE_PARTIAL_GC4_WITH_MONO =
-View. EINK_WAVEFORM_MODE_GC4
-| View. EINK_UPDATE_MODE_PARTIAL
-| View. EINK_DITHER_MODE_DITHER
-| View. EINK_MONOCHROME_MODE_MONOCHROME ;
+  View. EINK_WAVEFORM_MODE_GC4
+  | View. EINK_UPDATE_MODE_PARTIAL
+  | View. EINK_DITHER_MODE_DITHER
+  | View. EINK_MONOCHROME_MODE_MONOCHROME ;
 public static final int UPDATE_MODE_PARTIAL_GC16 =
-View. EINK_WAVEFORM_MODE_GC16
-| View. EINK_UPDATE_MODE_PARTIAL ;
+  View. EINK_WAVEFORM_MODE_GC16
+  | View. EINK_UPDATE_MODE_PARTIAL ;
 public static final int UPDATE_MODE_PARTIAL_AUTO =
-View. EINK_WAVEFORM_MODE_AUTO
-| View. EINK_UPDATE_MODE_PARTIAL ;
+  View. EINK_WAVEFORM_MODE_AUTO
+  | View. EINK_UPDATE_MODE_PARTIAL ;
 public static final int UPDATE_MODE_FULL_A2 =
-View. EINK_WAVEFORM_MODE_A2
-| View. EINK_UPDATE_MODE_FULL
-| View. EINK_MONOCHROME_MODE_MONOCHROME ;
+  View. EINK_WAVEFORM_MODE_A2
+  | View. EINK_UPDATE_MODE_FULL
+  | View. EINK_MONOCHROME_MODE_MONOCHROME ;
 public static final int UPDATE_MODE_FULL_DU =
-View. EINK_WAVEFORM_MODE_DU
-| View. EINK_UPDATE_MODE_FULL
-| View. EINK_MONOCHROME_MODE_MONOCHROME ;
+  View. EINK_WAVEFORM_MODE_DU
+  | View. EINK_UPDATE_MODE_FULL
+  | View. EINK_MONOCHROME_MODE_MONOCHROME ;
 public static final int MODE_APPNDRAWSTROKESYNC = 0x01000000;
-8
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Handwriting Library
+```
+
+## Handwriting Library
+```
 Import nDrawHelper class :
 import ntx.draw.nDrawHelper;
-Summary
-Return Parameter
-void NDrawInit();
-no parameter; initialize nDraw
-void NDrawSetDrawRegion(int[] packet);
-int [] packet { left, top, right, bottom} : set draw region
-void
-NDrawSwitch( boolean b )
-boolean b = true : nDrawHelper enable
-boolean b = false : nDrawHelper disable
-void
-NDrawSetInputOffset( int pen_offset_x , int pen_offset_y )
-int pen_offset_x : set pen offset x-axis coordinate
-int pen_offset_y : set pen offset y-axis coordinate
-void NDrawSetPenType( int penType)
-int penType: set pen type
-void NDrawSetStrokeWidth( int lineWidth )
-int lineWidth : set line width or pen thickness
-void NDrawSetPaintColor( int color )
-int color : set paint color
-void NDrawSetUpdateMode(int refresh_mode)
-int refresh_mode: set update mode of writing
-void NDrawSetMaxStrokeWidthWhenUsingPressure(int max_pressure )
-int max_pressure: set maximum pen thickness when using pressure
-void NDrawSaveSignature()
-no parameter; take screenshots of writing area and entire screen
-void NDrawSetInputRotation(int mCurrentRotation );
-int mCurrentRotation: set orientation of writing
-void NDrawDropFrames(long nanosecond )
-long nanosecond : set time of don't update screen
-9
-Rev. 1.3
+```
+#Summary
+
+|Return |Parameter|
+|-------|---------|
+|void |NDrawInit();<br>no parameter; initialize nDraw|
+|void |NDrawSetDrawRegion(int[] packet);<br>int [] packet { left, top, right, bottom} : set draw region|
+|void |NDrawSwitch( boolean b )<br>boolean b = true : nDrawHelper enable<br>boolean b = false : nDrawHelper disable|
+void |NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_offset_x : set pen offset x-axis coordinate <br>int pen_offset_y : set pen offset y-axis coordinate|
+|void |NDrawSetPenType( int penType) <br>int penType: set pen type|
+|void |NDrawSetStrokeWidth( int lineWidth ) <br>int lineWidth : set line width or pen thickness|
+|void |NDrawSetPaintColor( int color )<br>int color : set paint color|
+|void |NDrawSetUpdateMode(int refresh_mode)<br>int refresh_mode: set update mode of writing|
+|void |NDrawSetMaxStrokeWidthWhenUsingPressure(int max_pressure )<br>int max_pressure: set maximum pen thickness when using pressure|
+|void |NDrawSaveSignature() <br> no parameter; take screenshots of writing area and entire screen|
+|void |NDrawSetInputRotation(int mCurrentRotation ); <br>int mCurrentRotation: set orientation of writing|
+|void |NDrawDropFrames(long nanosecond ) <br>long nanosecond : set time of don't update screen|
+
 Programing Guide for MobiScribe eNote
 Example Code for Initializing nDraw:
 @Override
@@ -735,15 +704,3 @@ user response, followed by GC to
 change to grayscale?
 25
 Rev. 1.3
-
-|             |                      Features                     | Example Use Cases                                                              | WF Mode       | Comments                                                                                                                                                   |
-|-------------|:-------------------------------------------------:|--------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Interactive | Menu Selection (Response to user input)           | Black/White Options: Radio buttons, underlining, Box outline, invert text etc. | DU            |                                                                                                                                                            |
-| Interactive | Menu Selection (Response to user input)           | Grayscale Option: Highlight selection in gray                                  | GC            | Box Selection; could be more flashy                                                                                                                        |
-| Interactive | Keyboard/Text Input                               | Search box entry password entry                                                | DU            | if anti-aliased text is desired, can play around with combined DU/GC update                                                                                |
-| Interactive | Keyboard response                                 | Button Key acknowledgement                                                     | DU            | Inversion of selected key Use inherent flashiness of GC to redisplay the button                                                                            |
-| Interactive | Browsing books, apps, or menu options (graphical) | Selection                                                                      | GC            | Recommend doing pipeline to show transitions                                                                                                               |
-| Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | A2            | Reduced Contrast - may be more ghostly; Need to start and end with white; GC should follow to display a quality image                                      |
-| Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | DU            | Not as fast as A2 Better image quality                                                                                                                     |
-| Interactive | Panning                                           | Navigating zoomed text/images Navigating maps Camera view finder               | A2            | Achieve grayscale through dithering                                                                                                                        |
-| Interactive | Highlighting                                      | Text highlighting                                                              | DU  GC  DU+GC | inversion of text with DU  Grayscale highlighting with GC  Combination of both: DU for fast initial user response , followed by GC to change to grayscale? |
