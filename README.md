@@ -51,25 +51,26 @@ Standard(4 bits) Waveform Modes 22
 Regal (5 bits) Waveform Modes 23
 
 
-3
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-UI Design with waveform mode 23
-INTRODUCTION
+## INTRODUCTION 
+
 This document is provided by MobiScribe SDK Library, the purpose of
 providing software design guide. The SDK Library uses the JAVA language
 design, which contains two classes.jar and javalib.jar JAVA Library.
-Development REQUIREMENTS
-Operate System:
-● Windows 7 64-bit above version. 􀀀
-● Mac OS X 􀀀
-● Ubuntu 14.05 64-bit version 􀀀
-Java Environment:
-◆ Java Runtime Environment (JRE 1.8.0)
-◆ Java Development Kit (JDK 8)
-Android Environment:
-◆ Android SDK 4.4 (API level 19).
-◆ Android Studio 2.1.3 above version.
+
+## Development REQUIREMENTS
+
+# Operate System:
+
+- Windows 7 64-bit above version. 􀀀
+- Mac OS X 􀀀
+- Ubuntu 14.05 64-bit version 􀀀
+# Java Environment:
+- Java Runtime Environment (JRE 1.8.0)
+- Java Development Kit (JDK 8)
+# Android Environment:
+- Android SDK 4.4 (API level 19).
+- Android Studio 2.1.3 above version.
+
 4
 Rev. 1.3
 Programing Guide for MobiScribe eNote
