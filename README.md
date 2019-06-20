@@ -1,25 +1,31 @@
 # eNote-SDK
 
-Programing Guide for MobiScribe eNote
-
-Programing Guide
-for MobiScribe eNote
+### Programing Guide for MobiScribe eNote
 Version 2.0
 2019/03/26
-2
 Rev. 1.3
-Programing Guide for MobiScribe eNote
-Outline
+
+## Table of Contents
 INTRODUCTION 4
+
 Development REQUIREMENTS 4
+
 Operate System: 4
+
 Java Environment: 4
+
 Android Environment: 4
+
 IMPLEMENTATION 5
+
 MobiScribe Library (SDK): 5
+
 E-ink Refresh Library 6
+
 Example Code for Full Refresh Display 6
+
 Handwriting Library 9
+
 Example Code for Initializing nDraw 10
 Example Code for Setting Draw Region 11
 Example Code for Setting Multi Draw Region 12
@@ -43,6 +49,8 @@ Execute adb server 21
 Eink Features/Waveforms 22
 Standard(4 bits) Waveform Modes 22
 Regal (5 bits) Waveform Modes 23
+
+
 3
 Rev. 1.3
 Programing Guide for MobiScribe eNote
