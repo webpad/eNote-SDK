@@ -299,6 +299,7 @@ paint .setStrokeWidth(( float ) lineWidth );
 ```
 
 |Return| Parameter|
+|-----|----------|
 |void| NDrawSetStrokeWidth( int lineWidth ) <br>int lineWidth : set nDraw pen thickness|
 
 **Example Code for Setting Pen Thickness with Pressure of Writing:**
