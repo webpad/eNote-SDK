@@ -188,20 +188,20 @@ void |NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_off
 |void |NDrawSetInputRotation(int mCurrentRotation ); <br>int mCurrentRotation: set orientation of writing|
 |void |NDrawDropFrames(long nanosecond ) <br>long nanosecond : set time of don't update screen|
 
-Programing Guide for MobiScribe eNote
-Example Code for Initializing nDraw:
+**Example Code for Initializing nDraw:**
+```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 super .onCreate(savedInstanceState);
 nDrawHelper. NDrawInit ();
 }
-Return Parameter
-void NDrawInit();
-no parameter; initialize nDraw
-10
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for Setting Draw Region
+```
+|Return| Parameter|
+|------|-----------|
+|void| NDrawInit(); <br> no parameter; initialize nDraw|
+
+**Example Code for Setting Draw Region**
+```
 int Ndraw_region_left = 0 ;
 int Ndraw_region_top = getRelativeTop(NtxView. this );
 int Ndraw_region_right = Ndraw_region_left + w;
@@ -215,14 +215,13 @@ return myView .getTop();
 else
 return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
-Return Parameter
-void
-NDrawSetDrawRegion(int[] packet);
-int [] packet { left, top, right, bottom} : set draw region
-11
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for Setting Multi Draw Region
+```
+|Return| Parameter|
+|-------|---------|
+|void| NDrawSetDrawRegion(int[] packet);<br>int [] packet { left, top, right, bottom} : set draw region|
+
+**Example Code for Setting Multi Draw Region**
+```
 int Ndraw_region_left = 0 ;
 int Ndraw_region_top = getRelativeTop(NtxView. this );
 int Ndraw_region_right = Ndraw_region_left + w/ 3 ;
@@ -248,15 +247,13 @@ return myView .getTop();
 else
 return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
-Return Parameter
-void
-NDrawSetDrawRegion(int[] packet);
-int [] packet { left1, top1, right1, bottom1, left2, top2, right2, bottom2, left3,
-top3, right3, bottom3} : set multi draw region
-12
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for switch Hand Writing mode and pen offset :
+```
+|Return| Parameter|
+|void| NDrawSetDrawRegion(int[] packet); <br> int [] packet { left1, top1, right1, bottom1, left2, top2, right2, bottom2, left3,
+top3, right3, bottom3} : set multi draw region|
+
+**Example Code for switch Hand Writing mode and pen offset :**
+```
 // Set nDraw enable
 nDrawHelper.NDrawSwitch( true );
 // Set the pen offset, nDraw and Canvas offset must be the same.
@@ -281,15 +278,13 @@ Example Code for Setting Pen Type:
 nDrawHelper. NDrawSetPenType ( 0 ); //Pencil
 nDrawHelper. NDrawSetPenType ( 1 ); //Fountain Pen
 nDrawHelper. NDrawSetPenType ( 2 ); //Chinese Brush
-Return Parameter
-void
-NDrawSetPenType( int penType)
-int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
-respectively
-13
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for Setting nDraw Paint Stroke Width:
+```
+|Return| Parameter|
+|void| NDrawSetPenType( int penType) <br>int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
+respectively|
+
+**Example Code for Setting nDraw Paint Stroke Width:**
+```
 nDraw and paint strokeWidth of the Canvas must be the same.
 nDrawHelper.NDrawSetStrokeWidth(( int ) lineWidth );
 paint .setStrokeWidth(( float ) lineWidth );
@@ -308,13 +303,13 @@ Example Code for Setting nDraw Paint Color:
 nDraw and paint color of the canvas must be the same.
 nDrawHelper.NDrawSetPaintColor(Color. BLACK );
 paint .setColor(Color. BLACK );
-Return Parameter
-void NDrawSetPaintColor( int color )
-int color : set nDraw paint color
-14
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for Changing Update Mode of Writing
+```
+|Return| Parameter|
+|-------|----------|
+|void| NDrawSetPaintColor( int color ) <br> int color : set nDraw paint color|
+
+**Example Code for Changing Update Mode of Writing**
+```
 public static boolean isPenUpdateModeDU() {
 return SystemProperties.get( "ro.product.hardwareType" , "" ).equals( "ED0Q00" );
 }
@@ -328,17 +323,15 @@ public void setRefreshMode( int refresh_mode) {
 refreshMode = refresh_mode;
 nDrawHelper.NDrawSetUpdateMode(refresh_mode);
 }
-Return Parameter
-boolean isPenUpdateModeDU()
-no parameter; it will return true if device is "ED0Q00"
-void setRefreshMode(int refresh_mode)
-int refresh_mode: set update mode for writing
-void NDrawSetUpdateMode(int refresh_mode)
-int refresh_mode: set update mode of writing
-15
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Example Code for Setting Orientation of Writing Area
+```
+|Return| Parameter|
+|------|-----------|
+|boolean| isPenUpdateModeDU() <br> no parameter; it will return true if device is "ED0Q00"|
+|void| setRefreshMode(int refresh_mode) <br> int refresh_mode: set update mode for writing|
+|void| NDrawSetUpdateMode(int refresh_mode) <br>int refresh_mode: set update mode of writing|
+
+**Example Code for Setting Orientation of Writing Area**
+```
 private NtxView myNewView ;
 myNewView .setCurrentRotation(getRequestedOrientation());
 …
@@ -346,30 +339,34 @@ public void setCurrentRotation( int mCurrent_Rotation) {
 this . mCurrentRotation = mCurrent_Rotation;
 nDrawHelper. NDrawSetInputRotation ( mCurrentRotation );
 }
-Return Parameter
-void NDrawSetInputRotation(int mCurrentRotation );
-int mCurrentRotation: set orientation of writing area
-Example Code for Taking Screenshots of Writing Area and Entire Screen
+```
+|Return| Parameter|
+|------|----------|
+|void| NDrawSetInputRotation(int mCurrentRotation ); <br> int mCurrentRotation: set orientation of writing area|
+**Example Code for Taking Screenshots of Writing Area and Entire Screen**
+```
 nDrawHelper.NDrawSaveSignature();
-Return Parameter
-void
-NDrawSaveSignature()
-no parameter; take screenshots of writing area and entire screen, and save
-them(.png) to root directory of SD-Card.
-Example Code for Setting Time Duration of Dropping Frames
+```
+|Return| Parameter|
+|------|----------|
+|void| NDrawSaveSignature() <br>no parameter; take screenshots of writing area and entire screen, and save
+them(.png) to root directory of SD-Card.|
+
+**Example Code for Setting Time Duration of Dropping Frames**
+```
 nDrawHelper.NDrawDropFrames(400000000);
-Return Parameter
-void NDrawDropFrames( long nanosecond )
-long nanosecond: set time duration of dropping frames.
-16
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-Appendix
-Refresh Control Broadcast Receiver
+```
+|Return| Parameter|
+|void| NDrawDropFrames( long nanosecond ) <br>long nanosecond: set time duration of dropping frames.|
+
+# Appendix
+
+**Refresh Control Broadcast Receiver**
 In order to improve EPD scrolling display performance, we have adopted some global eink
 control strategies in framework. To ensure that your apps would not be influenced by those
 strategies, you have to change eink control permission value, example code is as follows.
-Example Code for Changing Eink Control Permission Value
+**Example Code for Changing Eink Control Permission Value**
+```
 @Override
 protected void onResume() {
 super .onResume();
@@ -385,38 +382,42 @@ Intent changePermissionIntent = new Intent( "ntx.eink_control.CHANGE_PERMISSON" 
 changePermissionIntent.putExtra( "isPermissionNtxApp" , isForNtxAppsOnly);
 sendBroadcast(changePermissionIntent);
 }
-17
-Rev. 1.3
-Programing Guide for MobiScribe eNote
+```
+
 Using Intent( "ntx.eink_control. GLOBAL_REFRESH " ), we can switch to and keep one
 refresh mode until we send broadcast to switch to another one. Example codes are as follows.
-Example Code for Changing Global Refresh Mode to
-UPDATE_MODE_GLOBAL_FULL_A2_WITH_DITHER
+
+**Example Code for Changing Global Refresh Mode to
+UPDATE_MODE_GLOBAL_FULL_A2_WITH_DITHER**
+```
 Intent myIntent = new Intent( "ntx.eink_control. GLOBAL_REFRESH " );
 myIntent.putExtra( "updatemode" ,NtxView. UPDATE_MODE_GLOBAL_FULL_A2_WITH_DIT
 HER );
 myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
-Example Code for Changing Global Refresh Mode to
-UPDATE_MODE_GLOBAL_RESET
+```
+**Example Code for Changing Global Refresh Mode to
+UPDATE_MODE_GLOBAL_RESET**
+```
 Intent myIntent = new Intent( "ntx.eink_control. GLOBAL_REFRESH " );
 myIntent.putExtra( "updatemode" ,NtxView. UPDATE_MODE_GLOBAL_RESET );
 myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
 Using Intent( "ntx.eink_control. QUICK_REFRESH " ), we can temporarily do some
 refresh, especially Full Refresh, just one time and then restore refresh mode immediately.
-Example code is as follows.
-Example Code for Doing a Full Refresh
+```
+**Example Code for Doing a Full Refresh**
+```
 Intent myIntent = new Intent( "ntx.eink_control. QUICK_REFRESH " );
 myIntent.putExtra( "updatemode" ,NtxView. UPDATE_MODE_FULL_GC16 );
 myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
-18
-Rev. 1.3
-Programing Guide for MobiScribe eNote
+```
 Sometimes we want to drop animation frames to decrease eink flash, example codes are as
 follows.
-Example Code for Setting Time Duration of Dropping Frames
+
+**Example Code for Setting Time Duration of Dropping Frames**
+```
 Intent myIntent = new Intent( "ntx.eink_control.DropFrames" );
 myIntent.putExtra( "period" , 1900000000L );//1.9 Seconds
 myIntent.putExtra( "commandFromNtxApp" , true );
@@ -426,10 +427,10 @@ Intent myIntent = new Intent( "ntx.eink_control.DropFrames" );
 myIntent.putExtra( "period" , 0L );//0 Seconds
 myIntent.putExtra( "commandFromNtxApp" , true );
 sendBroadcast(myIntent);
-19
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-2-Step-Suspend
+```
+
+**2-Step-Suspend**
+
 This feature is a method for power saving on the MobiScribe products
 with eInk panel. When this function is enabled, the system will keep
 the current screen and enter suspend after the user has not acted for
@@ -439,6 +440,7 @@ NOTE : When the user has an action, the system will be woken up
 from the suspend and it will take a very short time. It’s suitable for
 reader apps to flip pages. There will be a delay in the first stroke if
 using this feature in the handwriting apps.
+```
 /**
 * Control the 2-Step-Suspend for MobiScribe eInk devices
 *
@@ -453,12 +455,12 @@ Settings.System.putInt(mContext.getContentResolver(), "power_enhance_enable", st
 e.printStackTrace();
 }
 }
+```
 NOTE : Add the permission “WRITE_SETTINGS” in the AndroidManifest.xml
 <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 20
-Rev. 1.3
-Programing Guide for MobiScribe eNote
-adb Setup
+
+# adb Setup
 1. USB Driver Installation for Windows 7
 Download the driver from the Link , and install it.
 2. Download Android SDK platform-tools
