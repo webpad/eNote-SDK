@@ -6,49 +6,58 @@ Version 2.0
 Rev. 1.3
 
 ## Table of Contents
-INTRODUCTION 4
+INTRODUCTION 
 
-Development REQUIREMENTS 4
+Development REQUIREMENTS 
 
-Operate System: 4
+Operate System
 
-Java Environment: 4
+Java Environment
 
-Android Environment: 4
+Android Environment
 
-IMPLEMENTATION 5
+IMPLEMENTATION 
 
-MobiScribe Library (SDK): 5
+MobiScribe Library (SDK)
 
-E-ink Refresh Library 6
+E-ink Refresh Library
 
-Example Code for Full Refresh Display 6
+Example Code for Full Refresh Display
 
-Handwriting Library 9
+Handwriting Library
 
-Example Code for Initializing nDraw 10
-Example Code for Setting Draw Region 11
-Example Code for Setting Multi Draw Region 12
-Example Code for switch Hand Writing mode and pen offset 1 3
-Example Code for Setting Pen Type 1 3
-Example Code for Setting nDraw Paint Stroke Width 1 4
-Example Code for Setting Pen Thickness with Pressure of Writing 14
-Example Code for Setting nDraw Paint Color 1 4
-Example Code for Changing Update Mode of Writing 15
-Example Code for Setting Orientation of Writing Area 16
-Example Code for Taking Screenshots of Writing Area and Entire Screen 16
-Example Code for Setting Time Duration of Dropping Frames 16
-Appendix 17
-Refresh Control Broadcast Receiver 17
-2-Step-Suspend 20
-adb Setup 21
-USB Driver Installation for Windows 7 21
-Download Android SDK platform-tools 21
-Add Android Vendor ID 21
-Execute adb server 21
-Eink Features/Waveforms 22
-Standard(4 bits) Waveform Modes 22
-Regal (5 bits) Waveform Modes 23
+Example Code for Initializing nDraw
+
+Example Code for Setting Draw Region
+
+Example Code for Setting Multi Draw Region 
+
+Example Code for switch Hand Writing mode and pen offset 
+
+Example Code for Setting Pen Type 
+
+Example Code for Setting nDraw Paint Stroke Width
+
+Example Code for Setting Pen Thickness with Pressure of Writing 
+
+Example Code for Setting nDraw Paint Color 
+
+Example Code for Changing Update Mode of Writing
+
+Example Code for Setting Orientation of Writing Area 
+
+Example Code for Taking Screenshots of Writing Area and Entire Screen
+
+Example Code for Setting Time Duration of Dropping Frames
+
+Appendix 
+
+Refresh Control Broadcast Receiver 
+
+2-Step-Suspend
+
+
+
 
 
 ## INTRODUCTION 
@@ -171,7 +180,7 @@ public static final int MODE_APPNDRAWSTROKESYNC = 0x01000000;
 Import nDrawHelper class :
 import ntx.draw.nDrawHelper;
 ```
-#Summary
+# Summary
 
 |Return |Parameter|
 |-------|---------|
@@ -343,6 +352,7 @@ nDrawHelper. NDrawSetInputRotation ( mCurrentRotation );
 |Return| Parameter|
 |------|----------|
 |void| NDrawSetInputRotation(int mCurrentRotation ); <br> int mCurrentRotation: set orientation of writing area|
+
 **Example Code for Taking Screenshots of Writing Area and Entire Screen**
 ```
 nDrawHelper.NDrawSaveSignature();
@@ -365,6 +375,7 @@ nDrawHelper.NDrawDropFrames(400000000);
 In order to improve EPD scrolling display performance, we have adopted some global eink
 control strategies in framework. To ensure that your apps would not be influenced by those
 strategies, you have to change eink control permission value, example code is as follows.
+
 **Example Code for Changing Eink Control Permission Value**
 ```
 @Override
@@ -461,31 +472,30 @@ NOTE : Add the permission “WRITE_SETTINGS” in the AndroidManifest.xml
 20
 
 # adb Setup
-1. USB Driver Installation for Windows 7
-Download the driver from the Link , and install it.
-2. Download Android SDK platform-tools
-To visit the Android Studio website , USER GUIDE -> Release
+1. USB Driver Installation for Windows 7 <br>
+- Download the driver from the Link , and install it.
+2. Download Android SDK platform-tools <br> 
+- To visit the Android Studio website , USER GUIDE -> Release
 Note -> SDK Platform Tools , and to download the platform-tools
 package.
 3. Add Android Vendor ID
-● Windows 7 64-bit above version:
-○ Make a “.android” directory at C:\Users\(user-name)\
-○ Create a file “adb_usb.ini” in “.android” directory. Add the
+- Windows 7 64-bit above version:
+  - Make a “.android” directory at C:\Users\(user-name)\
+  - Create a file “adb_usb.ini” in “.android” directory. Add the
 content : 0x1f85, then save and close it.
-● Ubuntu 14.05 64-bit version:
-○ Make a “.android” directory at /home/(user-name)/
-○ Create a file “adb_usb.ini” in “.android” directory. Add the
+- Ubuntu 14.05 64-bit version:
+  - Make a “.android” directory at /home/(user-name)/
+  - Create a file “adb_usb.ini” in “.android” directory. Add the
 content : 0x1f85, then save and close it.
-4. Execute adb server
+4. Execute adb server<br>
 Plug the usb link of your device to the computer. Extract the
-download platform-tools package. Open the command line shell.
+download platform-tools package. Open the command line shell.<br>
 Execute the following commands :
+```
 adb kill-server
 adb start-server
 adb devices
-21
-Rev. 1.3
-Programing Guide for netronix eNote
+```
 Eink Features/Waveforms
 Standard(4 bits) Waveform Modes
 Mode Description
