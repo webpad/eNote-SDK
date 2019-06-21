@@ -201,8 +201,8 @@ void |NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_off
 ```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-super .onCreate(savedInstanceState);
-nDrawHelper. NDrawInit ();
+  super .onCreate(savedInstanceState);
+  nDrawHelper. NDrawInit ();
 }
 ```
 |Return| Parameter|
@@ -219,10 +219,10 @@ int [] packet1 = {Ndraw_region_left, Ndraw_region_top, Ndraw_region_right,
 Ndraw_region_bottom};
 nDrawHelper.NDrawSetDrawRegion(packet1);
 private int getRelativeTop(View myView ) {
-if ( myView .getParent() == myView .getRootView())
-return myView .getTop();
-else
-return myView .getTop() + getRelativeTop((View) myView .getParent());
+  if ( myView .getParent() == myView .getRootView())
+    return myView .getTop();
+  else
+    return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
 |Return| Parameter|
@@ -251,10 +251,10 @@ Ndraw_region_left_3, Ndraw_region_top_3, Ndraw_region_right_3,
 Ndraw_region_bottom_3};
 nDrawHelper. NDrawSetDrawRegion (multi_active_region);
 private int getRelativeTop(View myView ) {
-if ( myView .getParent() == myView .getRootView())
-return myView .getTop();
-else
-return myView .getTop() + getRelativeTop((View) myView .getParent());
+  if ( myView .getParent() == myView .getRootView())
+    return myView .getTop();
+  else
+    return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
 |Return| Parameter|
@@ -274,20 +274,19 @@ intCanvasOffsetY=offset_y;
 // Sync the pen stroke of the canvas to the framebuffer instantly when pen up
 int mode = MODE_APPNDRAWSTROKESYNC | UPDATE_MODE_FULL_GC16 ;
 invalidate(mode);
-Return Parameter
-void
-NDrawSwitch( boolean b )
-boolean b = true : nDrawHelper enable
-boolean b = false : nDrawHelper disable
-void
-NDrawSetInputOffset( int pen_offset_x , int pen_offset_y )
-int pen_offset_x : set nDraw pen offset x-axis coordinate
-int pen_offset_y : set nDraw pen offset y-axis coordinate
-Example Code for Setting Pen Type:
+```
+|Return| Parameter|
+|------|----------|
+|void| NDrawSwitch( boolean b )<br>boolean b = true : nDrawHelper enable <br>boolean b = false : nDrawHelper disable|
+|void| NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_offset_x : set nDraw pen offset x-axis coordinate <br>int pen_offset_y : set nDraw pen offset y-axis coordinate|
+
+**Example Code for Setting Pen Type:**
+```
 nDrawHelper. NDrawSetPenType ( 0 ); //Pencil
 nDrawHelper. NDrawSetPenType ( 1 ); //Fountain Pen
 nDrawHelper. NDrawSetPenType ( 2 ); //Chinese Brush
 ```
+
 |Return| Parameter|
 |void| NDrawSetPenType( int penType) <br>int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
 respectively|
@@ -297,18 +296,23 @@ respectively|
 nDraw and paint strokeWidth of the Canvas must be the same.
 nDrawHelper.NDrawSetStrokeWidth(( int ) lineWidth );
 paint .setStrokeWidth(( float ) lineWidth );
-Return Parameter
-void NDrawSetStrokeWidth( int lineWidth )
-int lineWidth : set nDraw pen thickness
-Example Code for Setting Pen Thickness with Pressure of Writing:
+```
+
+|Return| Parameter|
+|void| NDrawSetStrokeWidth( int lineWidth ) <br>int lineWidth : set nDraw pen thickness|
+
+**Example Code for Setting Pen Thickness with Pressure of Writing:**
+```
 //not using pressure, NOTSET=-1
 nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( NOTSET );
 //using pressure
 nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( max_pressure );
-Return Parameter
-void NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )
-int max_pressure : set maximum pen thickness when using pressure
-Example Code for Setting nDraw Paint Color:
+```
+|Return| Parameter|
+|void| NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )<br>int max_pressure : set maximum pen thickness when using pressure|
+
+**Example Code for Setting nDraw Paint Color:**
+```
 nDraw and paint color of the canvas must be the same.
 nDrawHelper.NDrawSetPaintColor(Color. BLACK );
 paint .setColor(Color. BLACK );
@@ -324,13 +328,13 @@ return SystemProperties.get( "ro.product.hardwareType" , "" ).equals( "ED0Q00" )
 }
 // update_mode initial
 if (isPenUpdateModeDU()) {
-setRefreshMode( UPDATE_MODE_PARTIAL_DU );
+  setRefreshMode( UPDATE_MODE_PARTIAL_DU );
 } else {
-setRefreshMode( UPDATE_MODE_PARTIAL_A2 );
+  setRefreshMode( UPDATE_MODE_PARTIAL_A2 );
 }
 public void setRefreshMode( int refresh_mode) {
-refreshMode = refresh_mode;
-nDrawHelper.NDrawSetUpdateMode(refresh_mode);
+  refreshMode = refresh_mode;
+  nDrawHelper.NDrawSetUpdateMode(refresh_mode);
 }
 ```
 |Return| Parameter|
