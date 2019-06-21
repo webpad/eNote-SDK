@@ -3,7 +3,7 @@
 ### Programing Guide for MobiScribe eNote
 Version 2.0
 2019/03/26
-Rev. 1.3
+
 
 ## Table of Contents
 INTRODUCTION 
@@ -514,8 +514,6 @@ Eink Features/Waveforms
 | GL (Local update WF when white to white, Global update when 16 gray levels) | The GL waveform is used to update anti-aliased text with reduced flash. GL should be used only with Full Display Update (UPD_FULL), the entire display except pixels staying in white will update as the new image is written. The GL waveform has 16 unique gray levels.                                                                                                 |
 
 
-Rev. 1.3
-
 ## Regal (5 bits) Waveform Modes
 Standard WF mode included
 
@@ -524,8 +522,6 @@ Standard WF mode included
 | GLR* (Local update WF) | Grayscale Local, 16 Levels, Regals A variation of the GL low flash waveform with improved edge ghost performance. 16 Grayscale levels used for anti-aliased text update and other images with white background. This should be used with full display update. All pixels except pixels staying white will update.   |
 | GLD* (Local update WF) | Grayscale Local, 16 Levels A variation of the GL low flash waveform with improved edge and areal ghost performance. 16 grayscale levels used for anti-aliased text update and other images with white background. This should be used with full display update. All pixels except pixels staying white will update. |
 
-23
-Rev. 1.3
 
 ## UI Design with waveform mode
 
@@ -540,8 +536,7 @@ Rev. 1.3
 | Startup/shutdown | Start up from known image                                      | - Coming out of screen saver - Starting from known shut-down state                                                                          | GC        | Because image is known, do not need to use INIT                                                                                                          |
 | Startup/shutdown | Device shutdown; sleep mode                                    | Power down with image on display                                                                                                            | GC        | Recommendation to go into a known state                                                                                                                  |
 
-Rev. 1.3
-Programing Guide for MobiScribe eNote
+
 
 |             |                      Features                     | Example Use Cases                                                              | WF Mode       | Comments                                                                                                                                                   |
 |-------------|:-------------------------------------------------:|--------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -554,5 +549,3 @@ Programing Guide for MobiScribe eNote
 | Interactive | Fast Page turn                                    | Scanning through Books/Documents                                               | DU            | Not as fast as A2 Better image quality                                                                                                                     |
 | Interactive | Panning                                           | Navigating zoomed text/images Navigating maps Camera view finder               | A2            | Achieve grayscale through dithering                                                                                                                        |
 | Interactive | Highlighting                                      | Text highlighting                                                              | DU  GC  DU+GC | inversion of text with DU  Grayscale highlighting with GC  Combination of both: DU for fast initial user response , followed by GC to change to grayscale? |
-
-Rev. 1.3
