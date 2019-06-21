@@ -201,8 +201,8 @@ void |NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_off
 ```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-  super .onCreate(savedInstanceState);
-  nDrawHelper. NDrawInit ();
+super .onCreate(savedInstanceState);
+nDrawHelper. NDrawInit ();
 }
 ```
 |Return| Parameter|
@@ -219,10 +219,10 @@ int [] packet1 = {Ndraw_region_left, Ndraw_region_top, Ndraw_region_right,
 Ndraw_region_bottom};
 nDrawHelper.NDrawSetDrawRegion(packet1);
 private int getRelativeTop(View myView ) {
-  if ( myView .getParent() == myView .getRootView())
-    return myView .getTop();
-  else
-    return myView .getTop() + getRelativeTop((View) myView .getParent());
+if ( myView .getParent() == myView .getRootView())
+return myView .getTop();
+else
+return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
 |Return| Parameter|
@@ -251,10 +251,10 @@ Ndraw_region_left_3, Ndraw_region_top_3, Ndraw_region_right_3,
 Ndraw_region_bottom_3};
 nDrawHelper. NDrawSetDrawRegion (multi_active_region);
 private int getRelativeTop(View myView ) {
-  if ( myView .getParent() == myView .getRootView())
-    return myView .getTop();
-  else
-    return myView .getTop() + getRelativeTop((View) myView .getParent());
+if ( myView .getParent() == myView .getRootView())
+return myView .getTop();
+else
+return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
 |Return| Parameter|
@@ -274,19 +274,20 @@ intCanvasOffsetY=offset_y;
 // Sync the pen stroke of the canvas to the framebuffer instantly when pen up
 int mode = MODE_APPNDRAWSTROKESYNC | UPDATE_MODE_FULL_GC16 ;
 invalidate(mode);
-```
-|Return| Parameter|
-|------|----------|
-|void| NDrawSwitch( boolean b )<br>boolean b = true : nDrawHelper enable <br>boolean b = false : nDrawHelper disable|
-|void| NDrawSetInputOffset( int pen_offset_x , int pen_offset_y ) <br>int pen_offset_x : set nDraw pen offset x-axis coordinate <br>int pen_offset_y : set nDraw pen offset y-axis coordinate|
-
-**Example Code for Setting Pen Type:**
-```
+Return Parameter
+void
+NDrawSwitch( boolean b )
+boolean b = true : nDrawHelper enable
+boolean b = false : nDrawHelper disable
+void
+NDrawSetInputOffset( int pen_offset_x , int pen_offset_y )
+int pen_offset_x : set nDraw pen offset x-axis coordinate
+int pen_offset_y : set nDraw pen offset y-axis coordinate
+Example Code for Setting Pen Type:
 nDrawHelper. NDrawSetPenType ( 0 ); //Pencil
 nDrawHelper. NDrawSetPenType ( 1 ); //Fountain Pen
 nDrawHelper. NDrawSetPenType ( 2 ); //Chinese Brush
 ```
-
 |Return| Parameter|
 |void| NDrawSetPenType( int penType) <br>int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
 respectively|
@@ -296,23 +297,18 @@ respectively|
 nDraw and paint strokeWidth of the Canvas must be the same.
 nDrawHelper.NDrawSetStrokeWidth(( int ) lineWidth );
 paint .setStrokeWidth(( float ) lineWidth );
-```
-
-|Return| Parameter|
-|void| NDrawSetStrokeWidth( int lineWidth ) <br>int lineWidth : set nDraw pen thickness|
-
-**Example Code for Setting Pen Thickness with Pressure of Writing:**
-```
+Return Parameter
+void NDrawSetStrokeWidth( int lineWidth )
+int lineWidth : set nDraw pen thickness
+Example Code for Setting Pen Thickness with Pressure of Writing:
 //not using pressure, NOTSET=-1
 nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( NOTSET );
 //using pressure
 nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( max_pressure );
-```
-|Return| Parameter|
-|void| NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )<br>int max_pressure : set maximum pen thickness when using pressure|
-
-**Example Code for Setting nDraw Paint Color:**
-```
+Return Parameter
+void NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )
+int max_pressure : set maximum pen thickness when using pressure
+Example Code for Setting nDraw Paint Color:
 nDraw and paint color of the canvas must be the same.
 nDrawHelper.NDrawSetPaintColor(Color. BLACK );
 paint .setColor(Color. BLACK );
@@ -328,13 +324,13 @@ return SystemProperties.get( "ro.product.hardwareType" , "" ).equals( "ED0Q00" )
 }
 // update_mode initial
 if (isPenUpdateModeDU()) {
-  setRefreshMode( UPDATE_MODE_PARTIAL_DU );
+setRefreshMode( UPDATE_MODE_PARTIAL_DU );
 } else {
-  setRefreshMode( UPDATE_MODE_PARTIAL_A2 );
+setRefreshMode( UPDATE_MODE_PARTIAL_A2 );
 }
 public void setRefreshMode( int refresh_mode) {
-  refreshMode = refresh_mode;
-  nDrawHelper.NDrawSetUpdateMode(refresh_mode);
+refreshMode = refresh_mode;
+nDrawHelper.NDrawSetUpdateMode(refresh_mode);
 }
 ```
 |Return| Parameter|
@@ -502,41 +498,16 @@ adb devices
 ```
 Eink Features/Waveforms
 Standard(4 bits) Waveform Modes
-Mode Description
-INIT
-(Global update WF)
-Initialize
-is used to completely clear the display, if it's left in an unknown state (i.e.
-if the previous image has been lost by a re-boot)
-DU
-(Local update WF)
-Direct update
-Non-flashing waveform that can be used to update. It can update any
-changed graytone pixel to black or white only. This waveform can be used
-for pen or other fast menu updates. It only updates changed pixels.
-GC
-(Global update WF)
-Grayscale Clear, 16 Levels
-A “flashy” waveform used for 16 level grayscale images. This provides the
-best image appearance. All the pixels are updated or cleared.
-A2
-(Local update WF)
-Animation, 2 Levels
-is a non-flashing waveform that can be used for fast updates and simple
-animation. This waveform support black & white updates only. Image
-quality and ghosting is reduced in exchange for the quicker response time.
-It only updates changed pixels and recommend a white image transition
-from 4bit to 1bit image into A2 and 1bit to 4bit out of A2 mode.
-GL
-( Local update WF
-when white to
-white, Global update
-when 16 gray levels)
-The GL waveform is used to update anti-aliased text with reduced flash.
-GL should be used only with Full Display Update (UPD_FULL), the entire
-display except pixels staying in white will update as the new image is
-written. The GL waveform has 16 unique gray levels.
-22
+
+| Mode                                                                        | Description                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| INIT (Global update WF)                                                     | Initialize is used to completely clear the display, if it's left in an unknown state (i.e. if the previous image has been lost by a reboot)                                                                                                                                                                                                                               |
+| DU (Local update WF)                                                        | Direct update Non-flashing wave form that can be used to update. It can update any changed graytone pixel to black or white only. This waveform can be used for pen or other fast menu updates. It only updates changed pixels.                                                                                                                                           |
+| GC (Global update WF)                                                       | Grayscale Clear, 16 levels A "flashy" waveform used for 16 level grayscale images. This provides the best image appearance. All the pixels are updated or cleared.                                                                                                                                                                                                        |
+| A2 (Local update WF)                                                        | Animation, 2 Levels is a non-flashing waveform that can be used for fast updates and simple animation. This waveform support black & white updates only. Image quality and ghosting is reduced in exchange for the quicker response time. It only updates changed pixels and recommend a white image transition from 4bit to 1bit into A2 and 1bit to 4bit out of A2 mode |
+| GL (Local update WF when white to white, Global update when 16 gray levels) | The GL waveform is used to update anti-aliased text with reduced flash. GL should be used only with Full Display Update (UPD_FULL), the entire display except pixels staying in white will update as the new image is written. The GL waveform has 16 unique gray levels.                                                                                                 |
+
+
 Rev. 1.3
 Programing Guide for MobiScribe eNote
 Regal (5 bits) Waveform Modes
