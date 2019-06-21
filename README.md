@@ -537,122 +537,28 @@ Rev. 1.3
 Programing Guide for MobiScribe eNote
 Regal (5 bits) Waveform Modes
 Standard WF mode included
-Mode Description
-GLR*
-(Local update WF)
-Grayscale Local, 16 Levels, Regal
-A variation of the GL low flash waveform with improved edge ghost
-performance. 16 grayscale levels used for anti-aliased text update and
-other images with white background. This should be used with full display
-update. All pixels except pixels staying white will update.
-GLD*
-(Local update WF)
-Grayscale Local, 16 Levels
-A variation of the GL low flash waveform with improved edge and areal
-ghost performance. 16 grayscale levels used for anti-aliased text update
-and other images with white background. This should be used with full
-display update. All pixels except pixels staying white will update.
+
+| Mode                   | Description                                                                                                                                                                                                                                                                                                         |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GLR* (Local update WF) | Grayscale Local, 16 Levels, Regals A variation of the GL low flash waveform with improved edge ghost performance. 16 Grayscale levels used for anti-aliased text update and other images with white background. This should be used with full display update. All pixels except pixels staying white will update.   |
+| GLD* (Local update WF) | Grayscale Local, 16 Levels A variation of the GL low flash waveform with improved edge and areal ghost performance. 16 grayscale levels used for anti-aliased text update and other images with white background. This should be used with full display update. All pixels except pixels staying white will update. |
+
 23
 Rev. 1.3
 Programing Guide for MobiScribe eNote
 UI Design with waveform mode
-Features Example Use Cases
-WF
-mode
-Comments
-CONTENT
-FOCUSED
-Text Page updates
-● Clock/digit time
-● Calendar
-● Turning pages in a book
-or document
-Regal,
-GL
-●Quality content with reduced
-flashiness during page updates;
-●Primarily for White background
-●May need GC update periodically
-Pictures
-● Launcher page turn
-● Gallery
-● Book covers
-● Screen savers
-● Illustrations
-● Home screens
-GC ●When you want best image quality
-●More flashing but less ghosting
-Entering a new
-book/application,
-natural user
-transitions
-●After a submenu/book
-has been selected from a
-menu or going from
-submenu/book to menu
-●Menu to submenu
-●Choosing between
-applications
-GC
-●Take advantage of natural breaks in
-the information flow to use GC to
-clear ghost buildup
-●When changing menus on screen
-INFORMATIO
-NAL
-Icons flashing or
-updating
-Battery charging, page
-loading, WiFi connection,
-download, etc.
-DU
-●Use black and white icons to take
-advantage of faster update time with
-DU mode
-●Can be small in a title/header bar area
-or Large in middle of display
-Overlaying content
-(pop-up menus,
-notifications, dialog
-boxes)
-●Low battery warning
-●Confirming a user
-decision
-●Quick view
-DU
-For best quality, bring up dialog/pop-up
-with DU and erase dialog/pop-up with
-GC.
-STARTUP/
-SHUTDOWN
-First time device is
-Powered-on, Loss
-of power, System
-freeze
-When display is in
-unknown state
-INIT
-●Longest update time and restarts
-display
-●Not a DC balanced waveform so use
-sparingly
-Startup from
-known image
-● Coming out of screen
-saver
-● Starting from known
-shut-down state
-GC
-Because image is known, do not need to
-use INIT
-Device Shutdown;
-Sleep mode
-Power down with image
-on the display
-GC
-Recommendation to go into a known
-state
-24
+
+|                  | Features                                                       | Example Use Cases                                                                                                                           | WF Mode   | Comments                                                                                                                                                 |
+|------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Content Focused  | Text Page Updates                                              | - Clock/digit time - Calendar - Turning pages in a book or document                                                                         | Regal, GL | - Quality content with reduced flashiness during page updates; - Primarily for white background - May need GC to update periodically                     |
+| Content Focused  | Pictures                                                       | - Launcher page turn - Gallery - Book covers - Screen savers - Illustrations - Home screens                                                 | GC        | - When you want best image quality - More flashing but less ghosting                                                                                     |
+| Content Focused  | Entering a new book/application, natural user transitions      | - After a submenu/book has been selected from a menu or going from a submenu/book to menu - Menu to submenu - Choosing between applications | GC        | - Take advantage of natural breaks in the information flow to use GC to clear ghost buildup - When changing menus on screen                              |
+| Informational    | Icons flashing or updating                                     | Battery charging, page loading, WiFi connection, download, etc                                                                              | DU        | - Use black and white icons to take advantage of faster update time with DU mode - Can be small in a title/header bar area or Large in middle of display |
+| Informational    | Overlaying content (pop-up menus, notifications, dialog boxes) | - Low battery warning - Confirming a user decision - Quick view                                                                             | DU        | For best quality, bring up dialog/pop-up with DU and erase dialog/pop-up with GC                                                                         |
+| Startup/shutdown | First time device is powered on, Loss of power, System freeze  | When display is in unknown state                                                                                                            | INIT      | - Longest update time and restarts display - Not a DC balanced waveform so use sparingly                                                                 |
+| Startup/shutdown | Start up from known image                                      | - Coming out of screen saver - Starting from known shut-down state                                                                          | GC        | Because image is known, do not need to use INIT                                                                                                          |
+| Startup/shutdown | Device shutdown; sleep mode                                    | Power down with image on display                                                                                                            | GC        | Recommendation to go into a known state                                                                                                                  |
+
 Rev. 1.3
 Programing Guide for MobiScribe eNote
 
