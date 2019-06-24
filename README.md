@@ -1,64 +1,7 @@
 # eNote-SDK
 
-### Programing Guide for MobiScribe eNote
-Version 2.0
-2019/03/26
-
-
-## Table of Contents
-INTRODUCTION 
-
-Development REQUIREMENTS 
-
-Operate System
-
-Java Environment
-
-Android Environment
-
-IMPLEMENTATION 
-
-MobiScribe Library (SDK)
-
-E-ink Refresh Library
-
-Example Code for Full Refresh Display
-
-Handwriting Library
-
-Example Code for Initializing nDraw
-
-Example Code for Setting Draw Region
-
-Example Code for Setting Multi Draw Region 
-
-Example Code for switch Hand Writing mode and pen offset 
-
-Example Code for Setting Pen Type 
-
-Example Code for Setting nDraw Paint Stroke Width
-
-Example Code for Setting Pen Thickness with Pressure of Writing 
-
-Example Code for Setting nDraw Paint Color 
-
-Example Code for Changing Update Mode of Writing
-
-Example Code for Setting Orientation of Writing Area 
-
-Example Code for Taking Screenshots of Writing Area and Entire Screen
-
-Example Code for Setting Time Duration of Dropping Frames
-
-Appendix 
-
-Refresh Control Broadcast Receiver 
-
-2-Step-Suspend
-
-
-
-
+## Version
+2.0
 
 ## INTRODUCTION 
 
