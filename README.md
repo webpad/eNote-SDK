@@ -1,5 +1,3 @@
-# eNote-SDK
-
 ## Version
 2.0
 
@@ -13,15 +11,15 @@ design, which contains two classes.jar and javalib.jar JAVA Library.
 
 # Operate System:
 
-- Windows 7 64-bit above version. 􀀀
-- Mac OS X 􀀀
-- Ubuntu 14.05 64-bit version 􀀀
+- Windows 7 64-bit above version. 
+- Mac OS X 
+- Ubuntu 14.05 64-bit version 
 # Java Environment:
 - Java Runtime Environment (JRE 1.8.0)
 - Java Development Kit (JDK 8)
 # Android Environment:
-- Android SDK 4.4 (API level 19).
-- Android Studio 2.1.3 above version.
+- Android SDK 4.4 (API level 19)
+- Android Studio 2.1.3 above version
 
 # IMPLEMENTATION
 
@@ -148,6 +146,7 @@ protected void onCreate(Bundle savedInstanceState) {
   nDrawHelper. NDrawInit ();
 }
 ```
+
 |Return| Parameter|
 |------|-----------|
 |void| NDrawInit(); <br> no parameter; initialize nDraw|
@@ -168,6 +167,7 @@ private int getRelativeTop(View myView ) {
     return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
+
 |Return| Parameter|
 |-------|---------|
 |void| NDrawSetDrawRegion(int[] packet);<br>int [] packet { left, top, right, bottom} : set draw region|
@@ -200,6 +200,7 @@ private int getRelativeTop(View myView ) {
     return myView .getTop() + getRelativeTop((View) myView .getParent());
 }
 ```
+
 |Return| Parameter|
 |void| NDrawSetDrawRegion(int[] packet); <br> int [] packet { left1, top1, right1, bottom1, left2, top2, right2, bottom2, left3,
 top3, right3, bottom3} : set multi draw region|
@@ -218,6 +219,7 @@ intCanvasOffsetY=offset_y;
 int mode = MODE_APPNDRAWSTROKESYNC | UPDATE_MODE_FULL_GC16 ;
 invalidate(mode);
 ```
+
 |Return| Parameter|
 |------|----------|
 |void| NDrawSwitch( boolean b )<br>boolean b = true : nDrawHelper enable <br>boolean b = false : nDrawHelper disable|
@@ -252,6 +254,7 @@ nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( NOTSET );
 //using pressure
 nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( max_pressure );
 ```
+
 |Return| Parameter|
 |void| NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )<br>int max_pressure : set maximum pen thickness when using pressure|
 
@@ -261,6 +264,7 @@ nDraw and paint color of the canvas must be the same.
 nDrawHelper.NDrawSetPaintColor(Color. BLACK );
 paint .setColor(Color. BLACK );
 ```
+
 |Return| Parameter|
 |-------|----------|
 |void| NDrawSetPaintColor( int color ) <br> int color : set nDraw paint color|
@@ -281,6 +285,7 @@ public void setRefreshMode( int refresh_mode) {
   nDrawHelper.NDrawSetUpdateMode(refresh_mode);
 }
 ```
+
 |Return| Parameter|
 |------|-----------|
 |boolean| isPenUpdateModeDU() <br> no parameter; it will return true if device is "ED0Q00"|
@@ -297,6 +302,7 @@ this . mCurrentRotation = mCurrent_Rotation;
 nDrawHelper. NDrawSetInputRotation ( mCurrentRotation );
 }
 ```
+
 |Return| Parameter|
 |------|----------|
 |void| NDrawSetInputRotation(int mCurrentRotation ); <br> int mCurrentRotation: set orientation of writing area|
@@ -305,6 +311,7 @@ nDrawHelper. NDrawSetInputRotation ( mCurrentRotation );
 ```
 nDrawHelper.NDrawSaveSignature();
 ```
+
 |Return| Parameter|
 |------|----------|
 |void| NDrawSaveSignature() <br>no parameter; take screenshots of writing area and entire screen, and save
@@ -314,6 +321,7 @@ them(.png) to root directory of SD-Card.|
 ```
 nDrawHelper.NDrawDropFrames(400000000);
 ```
+
 |Return| Parameter|
 |void| NDrawDropFrames( long nanosecond ) <br>long nanosecond: set time duration of dropping frames.|
 
