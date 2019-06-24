@@ -202,6 +202,7 @@ private int getRelativeTop(View myView ) {
 ```
 
 |Return| Parameter|
+|-------|---------|
 |void| NDrawSetDrawRegion(int[] packet); <br> int [] packet { left1, top1, right1, bottom1, left2, top2, right2, bottom2, left3,
 top3, right3, bottom3} : set multi draw region|
 
@@ -233,6 +234,7 @@ nDrawHelper. NDrawSetPenType ( 2 ); //Chinese Brush
 ```
 
 |Return| Parameter|
+|-------|---------|
 |void| NDrawSetPenType( int penType) <br>int penType: 0, 1, 2 set pen type as Pencil, Fountain Pen, and Chinese Brush
 respectively|
 
@@ -256,6 +258,7 @@ nDrawHelper.NDrawSetMaxStrokeWidthWhenUsingPressure( max_pressure );
 ```
 
 |Return| Parameter|
+|-------|---------|
 |void| NDrawSetMaxStrokeWidthWhenUsingPressure( int max_pressure )<br>int max_pressure : set maximum pen thickness when using pressure|
 
 **Example Code for Setting nDraw Paint Color:**
@@ -323,6 +326,7 @@ nDrawHelper.NDrawDropFrames(400000000);
 ```
 
 |Return| Parameter|
+|-------|---------|
 |void| NDrawDropFrames( long nanosecond ) <br>long nanosecond: set time duration of dropping frames.|
 
 # Appendix
