@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="MainActiviry" parent="@android:style/Theme.Holo.Light">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_picker_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_default"
+    android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/filepicker_file_grid"
+            android:layout_width="match_parent"
+            android:layout_height="998dp"
+            android:background="@color/filepicker_white"
+            android:layout_marginTop="20dp"
+            android:columnWidth = "@dimen/imagepicker_grid_column_width"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:numColumns="auto_fit" >
+        </GridView>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filepicker_file_grid"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal|bottom" >
+            
+            <ImageButton
+        android:id="@+id/imgb_pre_page"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:background="@drawable/imgb_pre_page" />
+
+    <TextView
+        android:id="@+id/page_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="xx of xx"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"/>
+
+    <ImageButton
+        android:id="@+id/imgb_next_page"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/imgb_next_page" />
+            
+<!--             <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/filepicker_button_cancel" />
+ -->
+            </RelativeLayout> 
+
+
+</RelativeLayout>

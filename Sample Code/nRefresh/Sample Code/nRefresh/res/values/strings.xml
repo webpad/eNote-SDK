@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">nRefresh</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="description">Please choose the waveform-mode, update-mode, wait-mode, and monochrome-mode  </string>
+    
+    <string name="spinner1_prompt">waveform: </string>
+    <string-array name="spinner1_arrays">
+        <item>DU</item>
+        <item>GC16</item>
+        <item>GC4</item>
+        <item>A2</item>
+        <item>GL16</item>
+        <item>GLR16</item>
+        <item>GLD16</item>
+    </string-array>
+    
+    <string name="spinner2_prompt">update: </string>
+    <string-array name="spinner2_arrays">
+        <item>PARTIAL</item>
+        <item>FULL</item>
+    </string-array>
+    
+    <string name="spinner3_prompt">wait: </string>
+    <string-array name="spinner3_arrays">
+        <item>NOWAIT</item>
+        <item>WAIT</item>
+    </string-array>
+    
+    <string name="spinner4_prompt">monochrome: </string>
+    <string-array name="spinner4_arrays">
+        <item>NOMONOCHROME</item>
+        <item>MONOCHROME</item>
+    </string-array>
+    
+    <string name="spinner5_prompt">dither: </string>
+    <string-array name="spinner5_arrays">
+        <item>NONE</item>
+        <item>DITHER</item>
+    </string-array>
+   
+</resources>

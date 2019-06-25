@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 15
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "ntx.painter"
+        minSdkVersion 15
+        targetSdkVersion 15
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+}
+
+dependencies {
+//    provided files('src/main/libs/classes.jar')
+    compile files('src/main/libs/javalib.jar')
+    compile files('src/main/libs/ntx_android_bt_net_classes.jar')
+    compile files('src/main/libs/ntx_android_graphics_classes.jar')
+    compile files('src/main/libs/ntx_android_os_classes.jar')
+    compile files('src/main/libs/ntx_android_view_classes.jar')
+
+}

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/gray_F"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="horizontal" >
+
+        <ntx.painter.ReselectSpinner
+            android:id="@+id/toolbox_thickness_spinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/toolbox_thickness_button"
+            android:layout_alignLeft="@+id/toolbox_thickness_button"
+            android:layout_marginBottom="-2dp"
+            android:layout_marginLeft="-3dp" />
+
+        <ImageButton
+            android:id="@+id/toolbox_thickness_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_thickness" />
+
+        <TextView
+            android:id="@+id/toolbox_thickness_number"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/toolbox_thickness_button"
+            android:layout_alignTop="@+id/toolbox_thickness_button"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="99"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ntx.painter.ReselectSpinner
+            android:id="@+id/pen_type_spinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/pen_type_button"
+            android:layout_alignLeft="@+id/pen_type_button"
+            android:layout_marginBottom="-2dp"
+            android:layout_marginLeft="-3dp" />
+
+        <ImageButton
+            android:id="@+id/pen_type_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/toolbox_thickness_button"
+            android:layout_toRightOf="@+id/toolbox_thickness_button"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/writing_pen_pencil" />
+
+        <TextView
+            android:id="@+id/pen_type_string"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pen_type_button"
+            android:layout_alignTop="@+id/pen_type_button"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="99"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/toolbox_calibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/pen_type_button"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/pen_type_button"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_calibration" />
+
+
+        <ImageButton
+            android:id="@+id/toolbox_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toolbox_calibration"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/toolbox_calibration"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_rotate"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/toolbox_clean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toolbox_rotate"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/toolbox_rotate"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_clean" />
+
+        <ImageButton
+            android:id="@+id/toolbox_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toolbox_clean"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/toolbox_clean"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_background"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/toolbox_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toolbox_background"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/toolbox_background"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_save"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/toolbox_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/toolbox_save"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/toolbox_save"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:src="@drawable/toolbox_info"
+            android:visibility="visible" />
+
+
+        <Button
+            android:id="@+id/btn_bg_black"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignTop="@+id/toolbox_info"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/toolbox_info"
+            android:background="@color/black"
+            android:visibility="visible" >
+        </Button>
+
+        <Button
+            android:id="@+id/btn_bg_white"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignTop="@+id/btn_bg_black"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@+id/btn_bg_black"
+            android:background="@drawable/background"
+            android:visibility="visible" >
+        </Button>
+
+
+        <Spinner
+            android:id="@+id/toolbox_refresh_mode_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+             />
+
+        <ImageButton
+            android:id="@+id/toolbox_full_refreshA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_bg_black"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/toolbox_full_refresh"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:visibility="visible"
+            android:src="@drawable/ic_menu_reset"
+            />
+
+
+
+
+        <ImageButton
+            android:id="@+id/toolbox_full_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_bg_black"
+            android:layout_marginLeft="2dp"
+            android:layout_toLeftOf ="@id/toolbox_refresh_mode_spinner"
+            android:background="@drawable/bg_default"
+            android:padding="3dp"
+            android:visibility="visible"
+            android:src="@drawable/toolbox_full_refresh"
+            />
+
+        <CheckBox
+            android:id="@+id/chkbox_finger_touch"
+            android:layout_width="150sp"
+            android:layout_height="35sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/btn_bg_white"
+            android:checked="false"
+            android:text="@string/chkbox_finger_touch"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/auto_draw"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_alignTop="@+id/btn_bg_black"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@+id/chkbox_finger_touch"
+            android:background="@drawable/background"
+            android:visibility="gone" >
+        </Button>
+<!--
+        <Spinner
+            android:id="@+id/toolbox_refresh_mode_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />    -->
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/painter_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/painter_item"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true" >-->
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/checkBox1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="check_OK"-->
+                <!--android:textColor="#000000" />-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+
+</LinearLayout>

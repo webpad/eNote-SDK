@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="title">SAVE FILE</string>
+    <string name="app_name">nPainter</string>
+    <string name="title_2">LOAD FILE</string>
+    <string name="chkbox_finger_touch">Finger touch</string>
+    <string name="msg_info">
+    This example is used to demonstrate E-ink refresh mode and digitizer \n\n
+    on the Netronix EPD devices.</string>
+    <string name="image_pick_title">Pick image</string>
+    <string name="image_pick_no_image">No image is found!</string>
+    <string name="toolbox_save_msg_success">Saving to %1$s is successful !</string>
+    <string name="toolbox_save_msg_fail">Saving to %1$s failed !</string>
+    <string name="wait">Please wait...</string>
+
+
+    <string-array name="horizontal_offset_list">
+        <item>Left 20</item>
+        <item>Left 16</item>
+        <item>Left 12</item>
+        <item>Left 8</item>
+        <item>Left 4</item>
+        <item>Zero</item>
+        <item>Right 4</item>
+        <item>Right 8</item>
+        <item>Right 12</item>
+        <item>Right 16</item>
+        <item>Right 20</item>
+    </string-array>
+
+    <integer-array name="horizontal_offset">
+        <item>-20</item>
+        <item>-16</item>
+        <item>-12</item>
+        <item>-8</item>
+        <item>-4</item>
+        <item>0</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+    </integer-array>
+
+    <string-array name="vertical_offset_list">
+        <item>Up 20</item>
+        <item>Up 16</item>
+        <item>Up 12</item>
+        <item>Up 8</item>
+        <item>Up 4</item>
+        <item>Zero</item>
+        <item>Down 4</item>
+        <item>Down 8</item>
+        <item>Down 12</item>
+        <item>Down 16</item>
+        <item>Down 20</item>
+    </string-array>
+
+    <integer-array name="vertical_offset">
+        <item>-20</item>
+        <item>-16</item>
+        <item>-12</item>
+        <item>-8</item>
+        <item>-4</item>
+        <item>0</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+    </integer-array>
+
+</resources>

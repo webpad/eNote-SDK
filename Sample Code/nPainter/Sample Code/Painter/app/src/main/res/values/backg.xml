@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Used in Spinner -->
+<string-array name="spinner_color">
+<item>WHITE</item>
+<item>RED</item>
+<item>GREEN</item>
+<item>BLUE</item>
+<item>YELLOW</item>
+<item>BLACK</item>
+<item>GRAY</item>
+<item>MAGENTA</item>
+<item>CYAN</item>
+</string-array>
+</resources>

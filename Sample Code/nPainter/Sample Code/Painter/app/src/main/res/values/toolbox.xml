@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="toolbox_refresh_mode">
+        <item>PARTIAL_DU</item>
+        <item>PARTIAL_DU_WITH_DITHER</item>
+        <item>PARTIAL_DU_WITH_MONO</item>
+        <item>PARTIAL_A2</item>
+        <item>PARTIAL_A2_WITH_DITHER</item>
+        <item>PARTIAL_A2_WITH_MONO</item>
+        <item>PARTIAL_GC4</item>
+        <item>PARTIAL_GC4_WITH_DITHER</item>
+        <item>PARTIAL_GC4_WITH_MONO</item>
+    </string-array>
+
+</resources>
