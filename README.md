@@ -3,9 +3,14 @@
 
 ## INTRODUCTION 
 
-This document is provided by MobiScribe SDK Library, the purpose of
-providing software design guide. The SDK Library uses the JAVA language
+This document is provided by MobiScribe. The SDK Library uses the JAVA language
 design, which contains two classes.jar and javalib.jar JAVA Library.
+
+Developers can use this SDK to customize MobiScribe like:
+1. Refresh mode of the eInk panel
+1. nDraw for handwriting speed-up
+1. 2-Step-Suspend for power saving on the reading apps
+1. Adb tool setup for Netronix devices
 
 ## Development REQUIREMENTS
 
