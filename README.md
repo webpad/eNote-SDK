@@ -354,7 +354,7 @@ super .onPause();
 changeEinkControlPermission( false );//be influenced by strategies in framework
 }
 private void changeEinkControlPermission( boolean isForNtxAppsOnly) {
-Intent changePermissionIntent = new Intent( "ntx.eink_control.CHANGE_PERMISSON" );
+Intent changePermissionIntent = new Intent( "ntx.eink_control.CHANGE_PERMISSION" );
 changePermissionIntent.putExtra( "isPermissionNtxApp" , isForNtxAppsOnly);
 sendBroadcast(changePermissionIntent);
 }
